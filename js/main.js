@@ -142,7 +142,7 @@ $(document).ready(() => {
             $("#effectMouse").css({
                 zIndex: -1
             })
-        }
+        } 
     });
 
     $('body').click(function (e) {
@@ -160,7 +160,6 @@ $(document).ready(() => {
                 top: 0
             })
         });
-        removeEffect(e.pageX);
     })
 
     $(window).resize(() => {
@@ -173,7 +172,7 @@ const removeEffect = (width) => {
     if (width <= 768) {
         $("#effectMouse").remove();
     } else {
-        $("body").append('<div id="effectMouse"></div><div id="mouseClick"></div>');
+        $("body").append('<div id="effectMouse"></div>');
     }
 }
 
