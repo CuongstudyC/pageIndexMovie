@@ -25,7 +25,7 @@ $(document).ready(() => {
 
     //fixed header:
     $(window).scroll((e) => {
-        $("#effectMouse").fadeOut();
+        $("#effectMouse").css('display','none');
         if ($(e.target).scrollTop() > 100) {
             $('.header').addClass('fixed');
         } else {
@@ -129,7 +129,7 @@ $(document).ready(() => {
     })
 
     const setEffectMouse = (e) =>{
-        $("#effectMouse").fadeIn();
+        $("#effectMouse").css('display','inline');
         $("#effectMouse").css({
             left: e.pageX - 20,
             top: e.pageY - 20,
