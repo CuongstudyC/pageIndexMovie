@@ -376,6 +376,7 @@ body, input, textarea, button {
 
 .about-section .about-img .img-box{
     position: relative;
+    z-index: -1;
 }
 
 .about-section .about-img .img-box .shape-02 {
@@ -677,6 +678,20 @@ body, input, textarea, button {
     background-image: url('../img/contact.jpg');
     background-size: cover;
     background-position: center;
+    position: relative;
+    z-index: -1;
+}
+
+.contact-section .contact-img .img-box::before {
+    content:'';
+    position: absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    z-index: -2;
 }
 
 .contact-section .section-title{
