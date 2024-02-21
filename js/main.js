@@ -3,14 +3,15 @@ let index = 0;
 const totalWorkItems = $('.work-item').length;
 
 $(window).on('load', () => {
-   const load = setTimeout(()=>{
-        $('.preloader').addClass("loaded");
-        clearTimeout(load);
-    },500)
-    
-})
+    const load = setTimeout(()=>{
+         $('.preloader').addClass("loaded");
+         clearTimeout(load);
+     },500)
+     
+ })
 
 $(document).ready(() => {
+
     $('.nav-toggle').click(() => {
         // hiện ra và mất đi bằng slideToggle();
         $('.header .nav').slideToggle();
@@ -160,6 +161,9 @@ $(document).ready(() => {
                 top: 0
             })
         });
+        if($('body').width() < 768) {
+            removeEffect($('body').width());
+        }
     })
 
     $(window).resize(() => {
