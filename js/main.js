@@ -25,6 +25,7 @@ $(document).ready(() => {
 
     //fixed header:
     $(window).scroll((e) => {
+        $("#effectMouse").fadeOut();
         if ($(e.target).scrollTop() > 100) {
             $('.header').addClass('fixed');
         } else {
@@ -122,9 +123,13 @@ $(document).ready(() => {
         autoOpen: false
     })
 
-
     $('body').mousemove(function (e) {
         // values: e.clientX, e.clientY, e.pageX, e.pageY
+        setEffectMouse(e);
+    })
+
+    const setEffectMouse = (e) =>{
+        $("#effectMouse").fadeIn();
         $("#effectMouse").css({
             left: e.pageX - 20,
             top: e.pageY - 20,
@@ -144,7 +149,7 @@ $(document).ready(() => {
                 zIndex: -1
             })
         } 
-    });
+    }
 
     $('body').click(function (e) {
         $("#mouseClick").css({
@@ -169,7 +174,6 @@ $(document).ready(() => {
     $(window).resize(() => {
         removeEffect($(window).width());
     });
-
 })
 
 const removeEffect = (width) => {
