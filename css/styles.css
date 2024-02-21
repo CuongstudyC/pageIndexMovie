@@ -187,8 +187,9 @@ body, input, textarea, button {
 
 .header .nav-toggle span::before,
 .header .nav-toggle span::after{
+    content: '';
     position: absolute;
-    left: 0;
+    /* left: 0; */
     top: 0;
     height: 1px;
     width: 100%;
@@ -197,17 +198,19 @@ body, input, textarea, button {
 }
 
 .header.fixed .nav-toggle span,
-.header.fixed .nav-toggle::before,
-.header.fixed .nav-toggle::after{
+.header.fixed .nav-toggle span::before,
+.header.fixed .nav-toggle span::after{
     background-color: #000000;
 }
 
 .header .nav-toggle span::before{
-    transform: translate(-6px);
+    transform: translate(-6px, -6px);
+    left: 6px;
 }
 
 .header .nav-toggle span::after{
-    transform: translate(6px);
+    transform: translate(6px, 6px);
+    left: -6px;
 }
 
 .header .nav{
@@ -376,7 +379,7 @@ body, input, textarea, button {
 
 .about-section .about-img .img-box{
     position: relative;
-    z-index: -1;
+    z-index: -2;
 }
 
 .about-section .about-img .img-box .shape-02 {
@@ -679,7 +682,7 @@ body, input, textarea, button {
     background-size: cover;
     background-position: center;
     position: relative;
-    z-index: -1;
+    z-index: -2;
 }
 
 .contact-section .contact-img .img-box::before {
@@ -691,7 +694,6 @@ body, input, textarea, button {
     bottom:0;
     background-color: rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
-    z-index: -2;
 }
 
 .contact-section .section-title{
